@@ -1,25 +1,29 @@
 import React, { Component } from "react";
+import TableComponent from "./TableComponent";
 
 class FileReaderComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       fileReader: "",
+      headLine: "",
+      splittedRows: "",
     };
   }
   handleFileRead = (e) => {
     const content = this.fileReader.result;
-    let headLine = content.indexOf("\n");
-    let rest = content.slice(0, headLine).split(";");
-    console.log(rest);
+    let sliceIndex = content.indexOf("\n");
+    let headLine = content.slice(0, sliceIndex).split(";");
+    this.setState({ headLine })
+    console.log(headLine);
 
-    let otherLines = content.slice(headLine, content.length);
+    let otherLines = content.slice(sliceIndex, content.length);
     // Split and get the rows in an array
     let rows = otherLines.split(".jpg");
-
     let splittedRows = [];
     for (let i = 0; i < rows.length; i++) {
       splittedRows.push(rows[i].split(";"));
+      this.setState({ splittedRows });
     }
     console.log(splittedRows);
   };
@@ -41,6 +45,9 @@ class FileReaderComponent extends Component {
           accept=".csv"
           onChange={(e) => this.handleFileChosen(e.target.files[0])}
         />
+        <div>
+            <TableComponent headLine={this.state.headLine} splittedRows={this.state.splittedRows} />
+        </div>
       </div>
     );
   }
