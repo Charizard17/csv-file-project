@@ -7,21 +7,21 @@ class FileReaderComponent extends Component {
     this.state = {
       fileReader: "",
       headLine: "",
-      splittedRows: "",
+      splittedRows: [],
     };
   }
   handleFileRead = (e) => {
     const content = this.fileReader.result;
     let sliceIndex = content.indexOf("\n");
     let headLine = content.slice(0, sliceIndex).split(";");
-    this.setState({ headLine })
+    this.setState({ headLine });
     console.log(headLine);
 
     let otherLines = content.slice(sliceIndex, content.length);
     // Split and get the rows in an array
     let rows = otherLines.split(".jpg");
     let splittedRows = [];
-    for (let i = 0; i < rows.length; i++) {
+    for (let i = 0; i < 10; i++) {
       splittedRows.push(rows[i].split(";"));
       this.setState({ splittedRows });
     }
@@ -46,7 +46,10 @@ class FileReaderComponent extends Component {
           onChange={(e) => this.handleFileChosen(e.target.files[0])}
         />
         <div>
-            <TableComponent headLine={this.state.headLine} splittedRows={this.state.splittedRows} />
+          <TableComponent
+            headLine={this.state.headLine}
+            splittedRows={this.state.splittedRows}
+          />
         </div>
       </div>
     );

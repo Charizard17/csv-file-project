@@ -11,7 +11,9 @@ class TableComponent extends Component {
             <TableRowHeadComponent headData={this.props.headLine} />
           </thead>
           <tbody>
-            <TableRowComponent rowData={this.props.splittedRows} />
+            {this.props.splittedRows.map((element, i) => {
+              return <TableRowComponent key={i} rowData={this.props.splittedRows[i]} />;
+            })}
           </tbody>
         </table>
       </div>
