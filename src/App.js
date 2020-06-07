@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import FileReaderComponent from "./FileReaderComponent";
+import { Switch, Route } from "react-router-dom";
+import AddNewProduct from "./Table/AddNewProduct";
 
 export default class App extends Component {
   constructor(props) {
@@ -12,8 +14,14 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello from App component</h1>
-        <FileReaderComponent />
+        <Switch>
+          <Route exact path="/">
+            <FileReaderComponent />
+          </Route>
+          <Route exact path="/add">
+            <AddNewProduct />
+          </Route>
+        </Switch>
       </div>
     );
   }

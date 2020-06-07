@@ -1,0 +1,75 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr 0.8fr 2.8fr 1fr 0.7fr 0.7fr 0.9fr 0.6fr 1fr 1.5fr 1.2fr 1.4fr 1.1fr 0.9fr 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "Hauptartikelnr Artikelname Hersteller Beschreibung Materialangaben Geschlecht Produktart Armel Bein Kragen Herstellung Taschenart Grammatur Material Ursprungsland Bildname Edit";
+}
+
+.Hauptartikelnr {
+  grid-area: Hauptartikelnr;
+}
+
+.Artikelname {
+  grid-area: Artikelname;
+}
+
+.Hersteller {
+  grid-area: Hersteller;
+}
+
+.Beschreibung {
+  grid-area: Beschreibung;
+}
+
+.Materialangaben {
+  grid-area: Materialangaben;
+}
+
+.Geschlecht {
+  grid-area: Geschlecht;
+}
+
+.Produktart {
+  grid-area: Produktart;
+}
+
+.Armel {
+  grid-area: Armel;
+}
+
+.Bein {
+  grid-area: Bein;
+}
+
+.Kragen {
+  grid-area: Kragen;
+}
+
+.Herstellung {
+  grid-area: Herstellung;
+}
+
+.Taschenart {
+  grid-area: Taschenart;
+}
+
+.Grammatur {
+  grid-area: Grammatur;
+}
+
+.Material {
+  grid-area: Material;
+}
+
+.Ursprungsland {
+  grid-area: Ursprungsland;
+}
+
+.Bildname {
+  grid-area: Bildname;
+}
+
+.Edit {
+  grid-area: Edit;
+}

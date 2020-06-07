@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TableComponent from "./TableComponent";
+import TableComponent from "./Table/TableComponent";
 
 class FileReaderComponent extends Component {
   constructor(props) {
@@ -23,8 +23,9 @@ class FileReaderComponent extends Component {
     let splittedRows = [];
     for (let i = 0; i < 10; i++) {
       splittedRows.push(rows[i].split(";"));
-      this.setState({ splittedRows });
     }
+    this.setState({ splittedRows });
+
     console.log(splittedRows);
   };
 
@@ -34,10 +35,16 @@ class FileReaderComponent extends Component {
     this.fileReader.readAsText(file);
   };
 
+  editOnClick = (newElement) => {
+    console.log(newElement);
+    // for(){
+    //   newElement.id == this.state.splittedRows.id
+    // }
+  };
+
   render() {
     return (
       <div>
-        <h2>This is File Reader component</h2>
         <input
           type="file"
           id="file"
@@ -46,9 +53,13 @@ class FileReaderComponent extends Component {
           onChange={(e) => this.handleFileChosen(e.target.files[0])}
         />
         <div>
+          <h2 className="text-center">Table</h2>
           <TableComponent
+            exact
+            path="/"
             headLine={this.state.headLine}
             splittedRows={this.state.splittedRows}
+            editOnClick={this.editOnClick}
           />
         </div>
       </div>
