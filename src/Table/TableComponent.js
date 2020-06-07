@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import TableRowHeadComponent from "./TableRowHeadComponent";
-import TableRowComponent from "./TableRowComponent";
 import Modal from "react-bootstrap/Modal";
 
 class TableComponent extends Component {
