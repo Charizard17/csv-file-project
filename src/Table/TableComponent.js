@@ -6,12 +6,11 @@ class TableComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show : false,
-      clickedElement: []
+      show: false,
+      clickedElement: [],
     };
   }
   render() {
-  
     return (
       <div>
         <table className="table table-hover table-bordered">
@@ -21,8 +20,7 @@ class TableComponent extends Component {
           <tbody>
             {this.props.splittedRows.map((element, i) => {
               return (
-
-                <tr className="grid-container">
+                <tr key={i} className="grid-container">
                   <th className="Hauptartikelnr" scope="row">
                     {element[0]}
                   </th>
@@ -42,17 +40,24 @@ class TableComponent extends Component {
                   <td className="Ursprungsland">{element[14]}</td>
                   <td className="Bildname">{element[15]}</td>
                   <td className="Edit">
-                    <button onClick={()=>{this.setState({clickedElement:element, show:true})}}>+</button>
+                    <button
+                      type="button"
+                      className="btn btn-success"
+                      onClick={() => {
+                        this.setState({ clickedElement: element, show: true });
+                      }}
+                    >
+                      +
+                    </button>
                   </td>
                 </tr>
-
               );
             })}
           </tbody>
         </table>
         <Modal
           show={this.state.show}
-          onHide={()=>this.setState({show:false}) }
+          onHide={() => this.setState({ show: false })}
           dialogClassName="modal-90w"
           aria-labelledby="example-custom-modal-styling-title"
         >
@@ -62,11 +67,186 @@ class TableComponent extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>
-              [{this.state.clickedElement[3]}]
-            </p>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Hauptartikelnr
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[0]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Artikelname
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[1]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Hersteller
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[2]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Beschreibung
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[3]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Materialangaben
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[4]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Geschlecht
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[5]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Produktart
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[6]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Armel
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[7]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Bein
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[8]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Kragen
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[9]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Herstellung
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[10]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Taschenart
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[11]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Grammatur
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[12]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Material
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[13]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Ursprungsland
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[14]}`}
+              ></textarea>
+            </div>
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" style={{ width: "150px" }}>
+                  Bildname
+                </span>
+              </div>
+              <textarea
+                className="form-control"
+                defaultValue={`${this.state.clickedElement[15]}`}
+              ></textarea>
+            </div>
           </Modal.Body>
-
+          <button type="button" className="btn btn-success">
+            Edit
+          </button>
         </Modal>
       </div>
     );
