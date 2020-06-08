@@ -37,9 +37,7 @@ class FileReaderComponent extends Component {
 
   editOnClick = (newElement) => {
     console.log(newElement);
-    // for(){
-    //   newElement.id == this.state.splittedRows.id
-    // }
+    console.log(`${this.state.clickedElement}`);
   };
 
   render() {

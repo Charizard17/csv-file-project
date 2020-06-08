@@ -38,7 +38,7 @@ class TableComponent extends Component {
                   <td className="Grammatur">{element[12]}</td>
                   <td className="Material">{element[13]}</td>
                   <td className="Ursprungsland">{element[14]}</td>
-                  <td className="Bildname">{element[15]}</td>
+                  <td className="Bildname">{element[15]}.jpg</td>
                   <td className="Edit">
                     <button
                       type="button"
@@ -244,7 +244,7 @@ class TableComponent extends Component {
               ></textarea>
             </div>
           </Modal.Body>
-          <button type="button" className="btn btn-success">
+          <button type="button" className="btn btn-success" onClick={this.props.editOnClick} >
             Edit
           </button>
         </Modal>
