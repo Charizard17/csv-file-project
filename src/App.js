@@ -11,6 +11,7 @@ class App extends Component {
       splittedRows: [],
       show: false,
       clickedElement: [],
+      inputValue: "",
     };
   }
   handleFileRead = (e) => {
@@ -40,7 +41,9 @@ class App extends Component {
 
   editOnClick = (newElement) => {
     console.log(newElement);
-    console.log(this.state.clickedElement);
+    console.log(this.state.inputValue);
+
+    this.updateInputValue(newElement);
   };
 
   render() {
@@ -162,7 +165,6 @@ class App extends Component {
               <Modal.Title id="example-custom-modal-styling-title">
                 Element Edit
               </Modal.Title>
-              clickedElement
             </Modal.Header>
             <Modal.Body>
               <div className="input-group">
@@ -171,10 +173,11 @@ class App extends Component {
                     Hauptartikelnr
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[0]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -182,10 +185,11 @@ class App extends Component {
                     Artikelname
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[1]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -193,10 +197,11 @@ class App extends Component {
                     Hersteller
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[2]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -204,10 +209,11 @@ class App extends Component {
                     Beschreibung
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[3]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -215,10 +221,11 @@ class App extends Component {
                     Materialangaben
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[4]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -226,10 +233,11 @@ class App extends Component {
                     Geschlecht
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[5]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -237,10 +245,11 @@ class App extends Component {
                     Produktart
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[6]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -248,10 +257,11 @@ class App extends Component {
                     Armel
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[7]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -259,10 +269,11 @@ class App extends Component {
                     Bein
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[8]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -270,10 +281,11 @@ class App extends Component {
                     Kragen
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[9]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -281,10 +293,11 @@ class App extends Component {
                     Herstellung
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[10]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -292,10 +305,11 @@ class App extends Component {
                     Taschenart
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[11]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -303,10 +317,11 @@ class App extends Component {
                     Grammatur
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[12]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -314,10 +329,11 @@ class App extends Component {
                     Material
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[13]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -325,10 +341,11 @@ class App extends Component {
                     Ursprungsland
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[14]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -336,10 +353,11 @@ class App extends Component {
                     Bildname
                   </span>
                 </div>
-                <textarea
+                <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[15]}`}
-                ></textarea>
+                  onChange={(evt) => this.updateInputValue(evt)}
+                ></input>
               </div>
             </Modal.Body>
             <button
@@ -353,6 +371,13 @@ class App extends Component {
         </div>
       </div>
     );
+  }
+
+  updateInputValue(evt) {
+    this.setState({
+      ...this.clickedElement,
+      inputValue: evt.target.value,
+    });
   }
 }
 
