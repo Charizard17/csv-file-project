@@ -39,12 +39,34 @@ class App extends Component {
     this.fileReader.readAsText(file);
   };
 
-  editOnClick = (newElement) => {
-    console.log(newElement);
-    console.log(this.state.inputValue);
+  // editOnClick = () => {
+  //   console.log(this.state.splittedRows)
+    // let tempArr = this.state.splittedRows
 
-    this.updateInputValue(newElement);
-  };
+    // for(let i = 0; i<this.state.splittedRows.length; ++i)
+    // {
+    //   if(this.state.splittedRows[i][0] === this.state.clickedElement[0])
+    //   {
+    //     tempArr[i]= this.state.clickedElement;
+    //     return;
+    //   }
+    // }
+
+    
+    // this.setState({
+    //   splittedRows: tempArr,
+    //   show:false,
+    // });
+   // };
+
+  updateInputValue(newValue, index) {
+    newValue.preventDefault();
+    let tempArr = this.state.clickedElement;
+    tempArr[index] = newValue.target.value;
+    this.setState({
+       clickedElement: tempArr,
+    });
+  }
 
   render() {
     return (
@@ -56,7 +78,7 @@ class App extends Component {
           accept=".csv"
           onChange={(e) => this.handleFileChosen(e.target.files[0])}
         />
-        <div>
+        <div fixed style={{ width: "90%", height: "90%",overflow: 'scroll' }}>
           <h2 className="text-center">Table</h2>
           <table className="table table-hover table-bordered">
             <thead>
@@ -176,7 +198,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[0]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 0)}
                 ></input>
               </div>
               <div className="input-group">
@@ -188,7 +210,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[1]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 1)}
                 ></input>
               </div>
               <div className="input-group">
@@ -200,7 +222,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[2]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 2)}
                 ></input>
               </div>
               <div className="input-group">
@@ -212,7 +234,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[3]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 3)}
                 ></input>
               </div>
               <div className="input-group">
@@ -224,7 +246,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[4]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 4)}
                 ></input>
               </div>
               <div className="input-group">
@@ -236,7 +258,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[5]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 5)}
                 ></input>
               </div>
               <div className="input-group">
@@ -248,7 +270,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[6]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 6)}
                 ></input>
               </div>
               <div className="input-group">
@@ -260,7 +282,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[7]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 7)}
                 ></input>
               </div>
               <div className="input-group">
@@ -272,7 +294,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[8]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 8)}
                 ></input>
               </div>
               <div className="input-group">
@@ -284,7 +306,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[9]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 9)}
                 ></input>
               </div>
               <div className="input-group">
@@ -296,7 +318,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[10]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 10)}
                 ></input>
               </div>
               <div className="input-group">
@@ -308,7 +330,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[11]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 11)}
                 ></input>
               </div>
               <div className="input-group">
@@ -320,7 +342,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[12]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 12)}
                 ></input>
               </div>
               <div className="input-group">
@@ -332,7 +354,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[13]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 13)}
                 ></input>
               </div>
               <div className="input-group">
@@ -344,7 +366,7 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[14]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 14)}
                 ></input>
               </div>
               <div className="input-group">
@@ -356,28 +378,21 @@ class App extends Component {
                 <input
                   className="form-control"
                   defaultValue={`${this.state.clickedElement[15]}`}
-                  onChange={(evt) => this.updateInputValue(evt)}
+                  onChange={(evt) => this.updateInputValue(evt, 15)}
                 ></input>
               </div>
             </Modal.Body>
-            <button
+            {/* <button
               type="button"
               className="btn btn-success"
               onClick={this.editOnClick}
             >
               Edit
-            </button>
+            </button> */}
           </Modal>
         </div>
       </div>
     );
-  }
-
-  updateInputValue(evt) {
-    this.setState({
-      ...this.clickedElement,
-      inputValue: evt.target.value,
-    });
   }
 }
 

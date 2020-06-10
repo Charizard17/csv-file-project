@@ -1,12 +1,12 @@
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: 0.9fr 1.2fr 0.8fr 2.8fr 1fr 0.7fr 0.7fr 0.9fr 0.6fr 1fr 1.5fr 1.2fr 1.4fr 1.1fr 0.9fr 1fr 0.5fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
-  grid-template-areas: "Hauptartikelnr Artikelname Hersteller Beschreibung Materialangaben Geschlecht Produktart Armel Bein Kragen Herstellung Taschenart Grammatur Material Ursprungsland Bildname Edit";
-}
+  grid-template-areas: "Hauptartikelnr Artikelname Hersteller Beschreibung Materialangaben Geschlecht Produktart Armel Bein Kragen Herstellung Taschenart Grammatur Material Ursprungsland Bildname Edit" "Hauptartikelnr Artikelname Hersteller Beschreibung Materialangaben Geschlecht Produktart Armel Bein Kragen Herstellung Taschenart Grammatur Material Ursprungsland Bildname Edit";
+} */
 
-.Hauptartikelnr {
+/* .Hauptartikelnr {
   grid-area: Hauptartikelnr;
 }
 
@@ -72,4 +72,4 @@
 
 .Edit {
   grid-area: Edit;
-}
+} */
