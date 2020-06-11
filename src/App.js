@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
 import Modal from "react-bootstrap/Modal";
+import { CSVLink, CSVDownload } from "react-csv";
 
 class App extends Component {
   constructor(props) {
@@ -62,6 +62,7 @@ class App extends Component {
     this.setState({
       showAdd: false,
       splittedRows: rows,
+      newElement: "",
     });
     this.addInputValue(element);
     console.log(this.state.newElement);
@@ -89,6 +90,8 @@ class App extends Component {
         >
           Element Hinzufügen
         </button>
+        <br/>
+        <CSVLink data={this.state.splittedRows}>Download me</CSVLink>;
         <div style={{ width: "95%", height: "90vh", overflow: "scroll" }}>
           <h2 className="text-center">Tabelle</h2>
           <table
@@ -153,42 +156,6 @@ class App extends Component {
                   </tr>
                 );
               })}
-              {/* {this.state.newElement.map((element, i) => {
-                return (
-                  <tr key={i}>
-                    <th scope="row">{element[0]}</th>
-                    <td>{element[1]}</td>
-                    <td>{element[2]}</td>
-                    <td>{element[3]}</td>
-                    <td>{element[4]}</td>
-                    <td>{element[5]}</td>
-                    <td>{element[6]}</td>
-                    <td>{element[7]}</td>
-                    <td>{element[8]}</td>
-                    <td>{element[9]}</td>
-                    <td>{element[10]}</td>
-                    <td>{element[11]}</td>
-                    <td>{element[12]}</td>
-                    <td>{element[13]}</td>
-                    <td>{element[14]}</td>
-                    <td>{element[15]}.jpg</td>
-                    <td>
-                      <button
-                        type="button"
-                        className="btn btn-success"
-                        onClick={() => {
-                          this.setState({
-                            clickedElement: element,
-                            show: true,
-                          });
-                        }}
-                      >
-                        +
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })} */}
             </tbody>
           </table>
           <Modal
