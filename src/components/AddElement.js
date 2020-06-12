@@ -124,11 +124,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Ärmel
           </Form.Label>
@@ -141,11 +137,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Bein
           </Form.Label>
@@ -158,11 +150,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Kragen
           </Form.Label>
@@ -175,11 +163,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Herstellung
           </Form.Label>
@@ -192,11 +176,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Taschenart
           </Form.Label>
@@ -209,11 +189,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Grammatur
           </Form.Label>
@@ -226,11 +202,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Material
           </Form.Label>
@@ -243,11 +215,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Ursprungsland
           </Form.Label>
@@ -260,11 +228,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Bildname
           </Form.Label>
@@ -277,11 +241,7 @@ class AddElement extends Component {
             />
           </Col>
         </Form.Group>
-        <Form.Group
-          as={Row}
-          controlId="formHorizontalPassword"
-          style={{ marginTop: "-10px" }}
-        >
+        <Form.Group as={Row} style={{ marginTop: "-10px" }}>
           <Form.Label column sm={2}>
             Bearbeiten
           </Form.Label>
