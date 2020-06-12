@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Modal from "react-bootstrap/Modal";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
+import AddElement from "./components/AddElement";
 
 class App extends Component {
   constructor(props) {
@@ -13,14 +14,17 @@ class App extends Component {
       showAdd: false,
       clickedElement: [],
       newElement: [],
+      value: "",
     };
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleFileRead = (e) => {
     const content = this.fileReader.result;
     let sliceIndex = content.indexOf("\n");
     let headLine = content.slice(0, sliceIndex).split(";");
     this.setState({ headLine });
-    console.log(headLine);
+    // console.log(headLine);
 
     let otherLines = content.slice(sliceIndex, content.length);
     let rows = otherLines.split(".jpg");
@@ -48,25 +52,32 @@ class App extends Component {
     });
   }
 
-  addInputValue(newValue, index) {
-    let tempArr2 = this.state.newElement;
-    tempArr2[index] = newValue.target.value;
-    this.setState({
-      newElement: tempArr2,
-    });
-  }
+  handleSubmit(newElement) {
+    console.log("handle submit func worked");
+    let tempArr=[];
+    let splittedRowsTemp = this.state.splittedRows;
 
-  addInputToArray = (element) => {
-    let rows = this.state.splittedRows;
-    rows.push(this.state.newElement)
-    this.setState({
-      showAdd: false,
-      splittedRows: rows,
-      newElement: "",
-    });
-    this.addInputValue(element);
-    console.log(this.state.newElement);
-  };
+    tempArr.push(newElement.Hauptartikelnr);
+    tempArr.push(newElement.Artikelname);
+    tempArr.push(newElement.Hersteller);
+    tempArr.push(newElement.Beschreibung);
+    tempArr.push(newElement.Materialangaben);
+    tempArr.push(newElement.Geschlecht);
+    tempArr.push(newElement.Produktart);
+    tempArr.push(newElement.Armel);
+    tempArr.push(newElement.Bein);
+    tempArr.push(newElement.Kragen);
+    tempArr.push(newElement.Herstellung);
+    tempArr.push(newElement.Taschenart);
+    tempArr.push(newElement.Grammatur);
+    tempArr.push(newElement.Material);
+    tempArr.push(newElement.Ursprungsland);
+    tempArr.push(newElement.Bildname);
+
+    splittedRowsTemp.push(tempArr);
+
+    this.setState({splittedRows:splittedRowsTemp})
+  }
 
   render() {
     return (
@@ -88,10 +99,14 @@ class App extends Component {
             });
           }}
         >
-          Element Hinzufügen
+          Neu Element Hinzufügen
         </button>
-        <br/>
-        <CSVLink data={this.state.splittedRows}>Download me</CSVLink>;
+        <br />
+        <CSVLink data={this.state.splittedRows}>
+          <button type="button" className="btn btn-warning text-primary mt-2">
+            CSV-Datei herunterladen
+          </button>
+        </CSVLink>
         <div style={{ width: "95%", height: "90vh", overflow: "scroll" }}>
           <h2 className="text-center">Tabelle</h2>
           <table
@@ -376,190 +391,12 @@ class App extends Component {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Hauptartikelnr
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 0)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Artikelname
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 1)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Hersteller
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 2)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Beschreibung
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 3)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Materialangaben
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 4)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Geschlecht
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 5)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Produktart
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 6)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Armel
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 7)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Bein
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 8)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Kragen
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 9)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Herstellung
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 10)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Taschenart
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 11)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Grammatur
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 12)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Material
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 13)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Ursprungsland
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 14)}
-                ></input>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" style={{ width: "150px" }}>
-                    Bildname
-                  </span>
-                </div>
-                <input
-                  className="form-control"
-                  onChange={(evt) => this.addInputValue(evt, 15)}
-                ></input>
-              </div>
+              <AddElement
+                value={this.state.value}
+                // handleChange={this.handleChange.bind(this)}
+                handleSubmit={this.handleSubmit.bind(this)}
+              />
             </Modal.Body>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={this.addInputToArray}
-            >
-              Element hinzufügen
-            </button>
           </Modal>
         </div>
       </div>
