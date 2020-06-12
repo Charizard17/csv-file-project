@@ -22,7 +22,7 @@ Name | Begründung
 
 Sie können einfach auf den folgenden Link klicken und sich die App ansehen:
 
-// netlify---linkkk ?
+https://csv-file-project.netlify.app/
 
 ---
 
