@@ -6,11 +6,11 @@ Folgende Technologien / Frameworks setze ich in meinem Projekt ein:
 
 - JavaScript / ReactJS
 
-Ich habe mich für ReactJS entschieden, weil ich glaube, dass Komponentenlogik für dieses Projekt gut ist.
+Ich habe mich für ReactJS entschieden, weil die Struktur von "state" für dieses Projekt sehr nützlich ist. Und außerdem kenne ich momentan nur ReactJS Framework.
 
 ## Eingesetzte 3rd Party Libraries
 
-Ich setze in meinem Projekt die folgenden 3rd Party Libraries ein: (falls keine, Tabelle entfernen und begründen warum)
+Ich setze in meinem Projekt die folgenden 3rd Party Libraries ein:
 
 Name | Begründung
 --- | ---
@@ -22,18 +22,18 @@ Name | Begründung
 
 Sie können einfach auf den folgenden Link klicken und sich die App ansehen:
 
-// netlify---
+// netlify---linkkk ?
 
 ---
 
-Oder laden Sie die Datei von github herunter und führen Sie sie aus.
-
-Um das Projekt lokal auszuführen, folgendes in der Commandline / Bash eingeben:
+Oder um das Projekt lokal auszuführen, folgendes in der Commandline / Bash eingeben:
 
 ```console
-$ git clone <linktorepository> csv-file-project
+$ git clone <https://github.com/Charizard17/csv-file-project.git> csv-file-project
 $ cd csv-file-project
 $ npm install
 $ npm run start
 ```
 ---
+
+[Hinweis]: Ich konnte es als Chart (Balken- oder Tortendiagramm) nicht darstellen. Aus diesem Grund habe ich die Anzahl der in der Tabelle angezeigten Array-Elemente als 10 festgelegt und die verbleibenden Elemente nicht angezeigt.

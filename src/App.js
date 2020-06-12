@@ -15,9 +15,8 @@ class App extends Component {
       clickedElement: [],
       newElement: [],
       value: "",
+      exportArtikels: "",
     };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleFileRead = (e) => {
     const content = this.fileReader.result;
@@ -54,7 +53,7 @@ class App extends Component {
 
   handleSubmit(newElement) {
     console.log("handle submit func worked");
-    let tempArr=[];
+    let tempArr = [];
     let splittedRowsTemp = this.state.splittedRows;
 
     tempArr.push(newElement.Hauptartikelnr);
@@ -72,11 +71,43 @@ class App extends Component {
     tempArr.push(newElement.Grammatur);
     tempArr.push(newElement.Material);
     tempArr.push(newElement.Ursprungsland);
-    tempArr.push(newElement.Bildname);
+    tempArr.push(newElement.Bildname.push);
 
     splittedRowsTemp.push(tempArr);
 
-    this.setState({splittedRows:splittedRowsTemp})
+    this.setState({
+      splittedRows: splittedRowsTemp,
+      showAdd: false,
+    });
+  }
+
+  combineAndExport() {
+    let combinedSplittedRows = "";
+
+    for (let i = 0; i < this.state.headLine.length; i++) {
+      combinedSplittedRows = combinedSplittedRows +  this.state.headLine[i] + ";";
+    }
+
+    for (let i = 0; i < this.state.splittedRows.length; i++) {
+      let j = 0;
+      for(j= 0 ; j < this.state.splittedRows[i].length - 1; ++j)
+      {
+        combinedSplittedRows = combinedSplittedRows +  this.state.splittedRows[i][j] + ";";
+      }
+      combinedSplittedRows = combinedSplittedRows +  this.state.splittedRows[i][j] + ".jpg";
+      if(i !==  this.state.splittedRows.length-1)
+       combinedSplittedRows = combinedSplittedRows + "\n";
+
+    }
+
+    this.setState(
+      {
+        exportArtikels: combinedSplittedRows,
+      },
+      () => {
+        console.log(this.state.exportArtikels);
+      }
+    );
   }
 
   render() {
@@ -102,8 +133,12 @@ class App extends Component {
           Neu Element Hinzufügen
         </button>
         <br />
-        <CSVLink data={this.state.splittedRows}>
-          <button type="button" className="btn btn-warning text-primary mt-2">
+        <CSVLink data={this.state.exportArtikels}>
+          <button
+            type="button"
+            onClick={() => this.combineAndExport()}
+            className="btn btn-warning text-primary mt-2"
+          >
             CSV-Datei herunterladen
           </button>
         </CSVLink>
@@ -393,7 +428,6 @@ class App extends Component {
             <Modal.Body>
               <AddElement
                 value={this.state.value}
-                // handleChange={this.handleChange.bind(this)}
                 handleSubmit={this.handleSubmit.bind(this)}
               />
             </Modal.Body>

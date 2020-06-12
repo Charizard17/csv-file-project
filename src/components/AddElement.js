@@ -24,17 +24,12 @@ class AddElement extends Component {
     };
   }
 
-  // onSubmit(asdasd){
-  //     asdasd.Hauptartikelnr
-  // }
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
     console.log(e.target.value);
     console.log(this.state.Hauptartikelnr);
   }
-//    this.props.onSubmit({
-//        this.state
-//    })
+
   render() {
     return (
       <Form>
@@ -300,7 +295,10 @@ class AddElement extends Component {
         </Form.Group>
         <Form.Group as={Row}>
           <Col>
-            <Button style={{ width: "100%" }} onClick={()=>this.props.handleSubmit(this.state)}>
+            <Button
+              style={{ width: "100%" }}
+              onClick={() => this.props.handleSubmit(this.state)}
+            >
               Element hinzufügen
             </Button>
           </Col>
