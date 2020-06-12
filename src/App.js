@@ -23,7 +23,6 @@ class App extends Component {
     let sliceIndex = content.indexOf("\n");
     let headLine = content.slice(0, sliceIndex).split(";");
     this.setState({ headLine });
-    // console.log(headLine);
 
     let otherLines = content.slice(sliceIndex, content.length);
     let rows = otherLines.split(".jpg");
@@ -32,8 +31,6 @@ class App extends Component {
       splittedRows.push(rows[i].split(";"));
     }
     this.setState({ splittedRows });
-
-    console.log(splittedRows);
   };
 
   handleFileChosen = (file) => {
